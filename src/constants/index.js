@@ -23,7 +23,7 @@ export const PROJECTS = [
     image: project1,
     description:
       "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "Bootstrap", "JQuery", "Laravel" , "MySQL"],
+    technologies: ["HTML", "Bootstrap", "JQuery", "Laravel" , "MySQL"],
   },
   {
     title: "Movie App",
