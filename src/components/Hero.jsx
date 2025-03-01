@@ -1,4 +1,3 @@
-import React from "react";
 import { HERO_CONTENT } from "../constants";
 import ProfilePic from "../assets/pfp.png";
 import { motion } from "framer-motion";
@@ -18,7 +17,7 @@ const container = delay => ({
 const Hero = () => {
     return (
         <div className="border-neutral-900 pb-4 lg:mb-35">
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap pt-20">
                 <div className="w-full lg:w-1/2">
                     <div className="flex flex-col items-center lg:items-start">
                         <motion.h1
