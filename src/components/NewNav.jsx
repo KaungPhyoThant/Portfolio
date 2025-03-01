@@ -64,8 +64,9 @@ export default function NewNav() {
         ))}
       </nav>
       {/* Sections */}
-      <NavBar />
+
       <section id="home">
+        <NavBar />
         <Hero />
       </section>
       <section id="about">
