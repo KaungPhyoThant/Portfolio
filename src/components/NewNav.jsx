@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react"; // Import icons
 import Hero from "./Hero";
 import NavBar from "./NavBar";
 import About from "./About";
@@ -11,6 +10,12 @@ import Contact from "./Contact";
 
 export default function NewNav() {
   const [activeSection, setActiveSection] = useState("home");
+
+  // Function to handle smooth scrolling
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    setActiveSection(id);
+  };
 
   // Track scroll position and update active section
   useEffect(() => {
@@ -50,7 +55,7 @@ export default function NewNav() {
           <button
             key={section}
             onClick={() => scrollToSection(section)}
-            className={`capitalize px-3 py-1 rounded-full transition-all ${
+            className={`capitalize px-3 py-1 rounded-full cursor-pointer transition-all ${
               activeSection === section ? "text-gradient" : "text-white"
             }`}
           >
@@ -58,7 +63,6 @@ export default function NewNav() {
           </button>
         ))}
       </nav>
-
       {/* Sections */}
       <NavBar />
       <section id="home">
