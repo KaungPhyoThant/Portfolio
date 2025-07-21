@@ -13,7 +13,7 @@ export const EXPERIENCES = [
     role: "Full-Stack Developer",
     company: "Ultimate Solutions.",
     description: `I’m a passionate Junior Web Developer, currently working at Ultimate Solutions, where I was fortunate enough to be offered a full-time position after completing my internship. My dedication and skills impressed the team, and they saw potential in me to grow and contribute to exciting projects. I’m always eager to learn, experiment, and improve my craft, making sure I bring value to the projects I work on.`,
-    technologies: ["React.js", "Php" , "Laravel" , "MySQL"],
+    technologies: ["React.js","Next.js" , "Php" , "Laravel" , "MySQL"],
   },
 ];
 
