@@ -1,7 +1,10 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+import project1 from "../assets/projects/project-1.png";
+import project2 from "../assets/projects/project-2.png";
+import project3 from "../assets/projects/project-3.png";
+import project4 from "../assets/projects/project-4.png";
+import project5 from "../assets/projects/project-5.png";
+import project6 from "../assets/projects/project-6.png";
+import project7 from "../assets/projects/project-7.png";
 
 export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With a year of hands-on experience, I have honed my skills in back-end technologies like PHP, Laravel, MySQL as well as front-end technologies like react.js and next.js. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
@@ -45,6 +48,27 @@ export const PROJECTS = [
     description:
       "A clothing POS project with laravel and php admin panel framework AKA FIlament fully functional Admin Panel.",
     technologies: ["HTML", "CSS", "Laravel", "AlpineJS", "FilamentPHP"],
+  },
+  {
+    title: "Job Board",
+    image: project5,
+    description:
+      "A sleek and responsive job board web application built with Next.js, styled using ShadCN UI, and powered by Clerk authentication. This project showcases a modern developer workflow with full support for dark/light mode toggling, clean UI components, and a smooth user experience.",
+    technologies: ["NextJS", "TailwindCss", "Prisma", "ShadCN", "ClerkAuth"],
+  },
+  {
+    title: "CookCraft",
+    image: project6,
+    description:
+      "CookCraft is a modern web application built with Next.js that empowers users to share, discover, and manage recipes in a beautifully designed cooking community. As a mentor on this project, I guide the development process, ensuring clean architecture, secure authentication, and efficient database handling.",
+    technologies: ["NextJS", "Mui", "Prisma", "NextAuth"],
+  },
+  {
+    title: "InernLink",
+    image: project7,
+    description:
+      "InternLink is a role-based internship management system designed to connect students, teachers, universities, and companies in one centralized platform. The system allows companies to post internships, universities to manage student participation, and students to apply for internship opportunities — all while giving admins full control over the entire ecosystem.",
+    technologies: ["NextJS", "Mui", "Prisma", "NextAuth","TailwindCSS"],
   },
 ];
 
