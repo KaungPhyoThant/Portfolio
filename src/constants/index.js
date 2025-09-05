@@ -15,8 +15,8 @@ export const EXPERIENCES = [
     year: "2024 - Present",
     role: "Full-Stack Developer",
     company: "Ultimate Solutions.",
-    description: `I’m a passionate Junior Web Developer, currently working at Ultimate Solutions, where I was fortunate enough to be offered a full-time position after completing my internship. My dedication and skills impressed the team, and they saw potential in me to grow and contribute to exciting projects. I’m always eager to learn, experiment, and improve my craft, making sure I bring value to the projects I work on.`,
-    technologies: ["React.js","Next.js" , "Php" , "Laravel" , "MySQL"],
+    description: `I’m a passionate Junior Full-Stack Developer, currently working at Ultimate Solutions, where I was fortunate enough to be offered a full-time position after completing my internship. My dedication and skills impressed the team, and they saw potential in me to grow and contribute to exciting projects. I’m always eager to learn, experiment, and improve my craft, making sure I bring value to the projects I work on.`,
+    technologies: ["React.js", "Next.js", "Php", "Laravel", "MySQL"],
   },
 ];
 
@@ -26,7 +26,7 @@ export const PROJECTS = [
     image: project1,
     description:
       "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "Bootstrap", "JQuery", "Laravel" , "MySQL"],
+    technologies: ["HTML", "Bootstrap", "JQuery", "Laravel", "MySQL"],
   },
   {
     title: "Movie App",
@@ -68,12 +68,12 @@ export const PROJECTS = [
     image: project7,
     description:
       "InternLink is a role-based internship management system designed to connect students, teachers, universities, and companies in one centralized platform. The system allows companies to post internships, universities to manage student participation, and students to apply for internship opportunities — all while giving admins full control over the entire ecosystem.",
-    technologies: ["NextJS", "Mui", "Prisma", "NextAuth","TailwindCSS"],
+    technologies: ["NextJS", "Mui", "Prisma", "NextAuth", "TailwindCSS"],
   },
 ];
 
 export const CONTACT = {
-  address: "MICT Park , Building 4 , Hlaing Township",
+  address: "Yangon, Kamayut",
   phoneNo: "+95 977 586 5836",
-  email: "doomvicii@gmail.com",
+  email: "terrythedev@gmail.com",
 };
