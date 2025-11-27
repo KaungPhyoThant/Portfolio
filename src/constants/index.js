@@ -5,6 +5,7 @@ import project4 from "../assets/projects/project-4.png";
 import project5 from "../assets/projects/project-5.png";
 import project6 from "../assets/projects/project-6.png";
 import project7 from "../assets/projects/project-7.png";
+import project8 from "../assets/projects/project-8.png";
 
 export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With a year of hands-on experience, I have honed my skills in back-end technologies like PHP, Laravel, MySQL as well as front-end technologies like react.js and next.js. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
@@ -69,6 +70,13 @@ export const PROJECTS = [
     description:
       "InternLink is a role-based internship management system designed to connect students, teachers, universities, and companies in one centralized platform. The system allows companies to post internships, universities to manage student participation, and students to apply for internship opportunities — all while giving admins full control over the entire ecosystem.",
     technologies: ["NextJS", "Mui", "Prisma", "NextAuth", "TailwindCSS"],
+  },
+  {
+    title: "ZandoPOS",
+    image: project8,
+    description:
+      "A full-stack POS system built with Laravel 12 and Next.js 14, featuring real-time order updates between cashier and kitchen, dynamic menu management, table management, and sales reporting. Designed for small restaurants to streamline order processing, improve workflow, and reduce manual errors.",
+    technologies: ["Laravel", "Mui", "NextJs", "Axios", "SWR"],
   },
 ];
 
