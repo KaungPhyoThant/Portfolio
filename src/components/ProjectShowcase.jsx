@@ -52,10 +52,7 @@ const ProjectShowcase = () => {
         transition={{ duration: 0.7 }}
         className="mx-auto max-w-3xl pt-20 text-center sm:pt-24"
       >
-        <p className="text-sm uppercase tracking-[0.35em] text-cyan-300/80">
-          New Feature
-        </p>
-        <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
+        <h2 className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
           Project Command Center
         </h2>
         <p className="mt-5 text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
@@ -187,33 +184,88 @@ const ProjectShowcase = () => {
               <motion.button
                 type="button"
                 key={project.title}
-                whileHover={{ y: -6, scale: 1.01 }}
+                whileHover="hover"
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 40 }}
-                transition={{ duration: 0.45, delay: index * 0.05 }}
+                variants={{
+                  hover: {
+                    y: -8,
+                    scale: 1.015,
+                    transition: {
+                      type: "spring",
+                      stiffness: 220,
+                      damping: 20,
+                    },
+                  },
+                }}
+                transition={{ duration: 0.35, delay: index * 0.05 }}
                 onClick={() => setSelectedProject(project)}
-                className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/45 text-left transition hover:border-cyan-300/30 sm:rounded-[1.75rem]"
+                className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/45 text-left transition-colors duration-300 hover:border-cyan-300/30 sm:rounded-[1.75rem]"
               >
                 <div className="relative h-60 overflow-hidden sm:h-64">
-                  <img
+                  <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    variants={{
+                      hover: {
+                        scale: 1.06,
+                        y: -4,
+                        transition: {
+                          duration: 0.6,
+                          ease: [0.22, 1, 0.36, 1],
+                        },
+                      },
+                    }}
+                    className="h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
                   <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                     {project.status}
                   </div>
                 </div>
-                <div className="space-y-4 p-5">
+                <motion.div
+                  variants={{
+                    hover: {
+                      y: -2,
+                      transition: {
+                        duration: 0.35,
+                        ease: "easeOut",
+                      },
+                    },
+                  }}
+                  className="space-y-4 p-5"
+                >
                   <div className="flex items-center justify-between gap-3">
-                    <div>
+                    <motion.div
+                      variants={{
+                        hover: {
+                          x: 2,
+                          transition: {
+                            duration: 0.3,
+                            ease: "easeOut",
+                          },
+                        },
+                      }}
+                    >
                       <p className="text-sm uppercase tracking-[0.25em] text-cyan-300/80">
                         {project.category}
                       </p>
                       <h3 className="mt-2 text-xl font-semibold text-white sm:text-2xl">{project.title}</h3>
-                    </div>
-                    <ArrowUpRight className="text-slate-400 transition group-hover:text-cyan-300" />
+                    </motion.div>
+                    <motion.div
+                      variants={{
+                        hover: {
+                          x: 4,
+                          y: -4,
+                          transition: {
+                            duration: 0.3,
+                            ease: "easeOut",
+                          },
+                        },
+                      }}
+                    >
+                      <ArrowUpRight className="text-slate-400 transition-colors duration-300 group-hover:text-cyan-300" />
+                    </motion.div>
                   </div>
                   <p className="line-clamp-3 text-sm leading-6 text-slate-300 sm:leading-7">
                     {project.description}
@@ -228,7 +280,7 @@ const ProjectShowcase = () => {
                       </span>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               </motion.button>
             ))}
           </div>

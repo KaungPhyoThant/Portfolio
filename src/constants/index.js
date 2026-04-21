@@ -8,7 +8,7 @@ import project7 from "../assets/projects/project-7.png";
 import project8 from "../assets/projects/project-8.png";
 import project9 from "../assets/projects/project-9.png";
 
-export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With a year of hands-on experience, I have honed my skills in back-end technologies like PHP, Laravel, MySQL as well as front-end technologies like react.js and next.js. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
+export const HERO_CONTENT = `I build responsive, scalable web apps with React, Next.js, Laravel, and MySQL. I care about clean product experiences, reliable backend architecture, and turning ideas into polished features that people actually enjoy using.`;
 
 export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With a year of professional experience, I have worked with a variety of technologies, including React, Next.js, PHP, Laravel and MySQL. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
 

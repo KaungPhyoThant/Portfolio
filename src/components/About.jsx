@@ -19,7 +19,7 @@ const About = () => {
                             alt="about"
                             width={320}
                             height={320}
-                            className="w-full max-w-[320px] rounded-[1.75rem] border border-white/10 bg-white/5 p-3 shadow-xl shadow-slate-950/40 sm:rounded-[2rem]"
+                            className="w-full max-w-[320px] rounded-[1.75rem]  p-3 shadow-xl shadow-slate-950/40 sm:rounded-[2rem]"
                         />
                     </div>
                 </div>

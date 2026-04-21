@@ -18,7 +18,7 @@ const container = delay => ({
 const Hero = () => {
     return (
         <div className="border-b border-white/10 pb-14 sm:pb-16 lg:mb-24">
-            <div className="flex flex-wrap items-center gap-y-10 pt-4 sm:pt-6 lg:pt-16">
+            <div className="flex flex-wrap items-center gap-y-8 pt-2 sm:pt-4 lg:pt-10">
                 <div className="w-full lg:w-7/12">
                     <div className="flex flex-col items-center lg:items-start">
                         <motion.div
@@ -50,7 +50,7 @@ const Hero = () => {
                             variants={container(1)}
                             initial="hidden"
                             animate="visible"
-                            className="my-2 max-w-2xl py-5 text-center text-sm leading-7 text-slate-300 sm:text-base sm:leading-8 lg:text-left"
+                            className="my-1 max-w-xl py-4 text-center text-sm leading-7 text-slate-300 sm:text-base sm:leading-8 lg:text-left"
                         >
                             {HERO_CONTENT}
                         </motion.p>
@@ -58,7 +58,7 @@ const Hero = () => {
                             variants={container(1.1)}
                             initial="hidden"
                             animate="visible"
-                            className="grid w-full max-w-2xl gap-3 pb-6 sm:grid-cols-3"
+                            className="grid w-full max-w-2xl gap-3 pb-5 sm:grid-cols-3"
                         >
                             {HERO_STATS.map((item) => (
                                 <div
@@ -115,7 +115,7 @@ const Hero = () => {
                                     className="h-auto w-full max-w-[280px] object-cover"
                                 />
                             </motion.div>
-                            <div className="mt-6 space-y-4">
+                            <div className="mt-5 space-y-3">
                                 {FEATURED_FOCUS.map((item) => (
                                     <div
                                         key={item}
