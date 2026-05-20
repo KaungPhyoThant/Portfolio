@@ -9,6 +9,9 @@ import {
   X,
 } from "lucide-react";
 import { PROJECTS } from "../constants";
+import SectionHeading from "./SectionHeading";
+import ProjectImage from "./ProjectImage";
+import { viewportOnce } from "../utils/motion";
 
 const categories = ["All", ...new Set(PROJECTS.map((project) => project.category))];
 
@@ -46,29 +49,23 @@ const ProjectShowcase = () => {
 
   return (
     <div className="border-b border-white/10 pb-20 sm:pb-24">
-      <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 40 }}
-        transition={{ duration: 0.7 }}
-        className="mx-auto max-w-3xl pt-20 text-center sm:pt-24"
-      >
-        <h2 className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
-          Project Command Center
-        </h2>
-        <p className="mt-5 text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
-          Browse my work by product type, search through the stack, and open a detailed modal to inspect each build.
-        </p>
-      </motion.div>
+      <SectionHeading
+        eyebrow="Work"
+        title="Projects"
+        description="Filter, search, and explore my work."
+        className="pt-20 sm:pt-24"
+      />
 
       <motion.div
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 40 }}
+        viewport={viewportOnce}
         transition={{ duration: 0.6 }}
-        className="mt-10 overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/50 sm:mt-14 sm:rounded-[2rem]"
+        className="mt-10 overflow-hidden glass-panel bg-surface-elevated/50 sm:mt-14"
       >
         <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 p-5 sm:p-6 lg:order-1 lg:p-8">
-            <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">
+            <p className="text-sm uppercase tracking-[0.3em] text-violet-300/80">
               Spotlight
             </p>
             <h3 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
@@ -106,7 +103,7 @@ const ProjectShowcase = () => {
                   href={spotlightProject.liveDemo}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-cyan-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-violet-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-violet-300"
                 >
                   <ExternalLink size={18} />
                   Live Demo
@@ -117,7 +114,7 @@ const ProjectShowcase = () => {
                   href={spotlightProject.sourceCode}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 font-semibold text-white transition hover:border-cyan-300/40"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 font-semibold text-white transition hover:border-violet-300/40"
                 >
                   <Github size={18} />
                   Source Code
@@ -126,13 +123,12 @@ const ProjectShowcase = () => {
             </div>
           </div>
 
-          <div className="order-1 min-h-[260px] lg:order-2 lg:min-h-full">
-            <img
-              src={spotlightProject?.image}
-              alt={spotlightProject?.title}
-              className="h-full w-full object-cover"
-            />
-          </div>
+          <ProjectImage
+            src={spotlightProject?.image}
+            alt={spotlightProject?.title}
+            variant="spotlight"
+            className="order-1 lg:order-2"
+          />
         </div>
       </motion.div>
 
@@ -146,7 +142,7 @@ const ProjectShowcase = () => {
           <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
             <div>
               <p className="text-sm text-slate-400">Showing {filteredProjects.length} projects</p>
-              <h3 className="text-xl font-semibold text-white sm:text-2xl">Filter the portfolio</h3>
+              <h3 className="text-xl font-semibold text-white sm:text-2xl">Find a project</h3>
             </div>
             <div className="relative w-full">
               <Search
@@ -157,8 +153,8 @@ const ProjectShowcase = () => {
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 type="text"
-                placeholder="Search tech, projects, or keywords"
-                className="w-full rounded-full border border-white/10 bg-slate-950/60 py-3 pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/40"
+                placeholder="Search projects or tech"
+                className="w-full rounded-full border border-white/10 bg-slate-950/60 py-3 pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-300/40"
               />
             </div>
           </div>
@@ -170,8 +166,8 @@ const ProjectShowcase = () => {
                 onClick={() => setActiveCategory(category)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                   activeCategory === category
-                    ? "bg-cyan-400 text-slate-950"
-                    : "border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30"
+                    ? "bg-violet-400 text-slate-950"
+                    : "border border-white/10 bg-white/5 text-slate-200 hover:border-violet-300/30"
                 }`}
               >
                 {category}
@@ -200,25 +196,25 @@ const ProjectShowcase = () => {
                 }}
                 transition={{ duration: 0.35, delay: index * 0.05 }}
                 onClick={() => setSelectedProject(project)}
-                className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/45 text-left transition-colors duration-300 hover:border-cyan-300/30 sm:rounded-[1.75rem]"
+                className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/45 text-left transition-colors duration-300 hover:border-violet-300/30 sm:rounded-[1.75rem]"
               >
-                <div className="relative h-60 overflow-hidden sm:h-64">
-                  <motion.img
+                <div className="relative">
+                  <ProjectImage
+                    as={motion.img}
                     src={project.image}
                     alt={project.title}
+                    variant="card"
                     variants={{
                       hover: {
-                        scale: 1.06,
-                        y: -4,
+                        scale: 1.03,
                         transition: {
                           duration: 0.6,
                           ease: [0.22, 1, 0.36, 1],
                         },
                       },
                     }}
-                    className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-950/90 to-transparent" />
                   <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/30 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                     {project.status}
                   </div>
@@ -247,7 +243,7 @@ const ProjectShowcase = () => {
                         },
                       }}
                     >
-                      <p className="text-sm uppercase tracking-[0.25em] text-cyan-300/80">
+                      <p className="text-sm uppercase tracking-[0.25em] text-violet-300/80">
                         {project.category}
                       </p>
                       <h3 className="mt-2 text-xl font-semibold text-white sm:text-2xl">{project.title}</h3>
@@ -264,7 +260,7 @@ const ProjectShowcase = () => {
                         },
                       }}
                     >
-                      <ArrowUpRight className="text-slate-400 transition-colors duration-300 group-hover:text-cyan-300" />
+                      <ArrowUpRight className="text-slate-400 transition-colors duration-300 group-hover:text-violet-300" />
                     </motion.div>
                   </div>
                   <p className="line-clamp-3 text-sm leading-6 text-slate-300 sm:leading-7">
@@ -274,7 +270,7 @@ const ProjectShowcase = () => {
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-100"
+                        className="rounded-full border border-violet-400/20 bg-violet-400/10 px-3 py-1 text-xs font-medium text-violet-100"
                       >
                         {tech}
                       </span>
@@ -287,9 +283,9 @@ const ProjectShowcase = () => {
 
           {!filteredProjects.length && (
             <div className="mt-8 rounded-[1.75rem] border border-dashed border-white/15 bg-slate-950/50 p-10 text-center">
-              <Filter className="mx-auto text-cyan-300" size={26} />
-              <p className="mt-4 text-lg font-medium text-white">No projects match that filter yet.</p>
-              <p className="mt-2 text-slate-400">Try another category or a broader search term.</p>
+              <Filter className="mx-auto text-violet-300" size={26} />
+              <p className="mt-4 text-lg font-medium text-white">No matches found.</p>
+              <p className="mt-2 text-slate-400">Try another filter or search term.</p>
             </div>
           )}
         </motion.div>
@@ -309,7 +305,7 @@ const ProjectShowcase = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               onClick={(event) => event.stopPropagation()}
-              className="custom-scrollbar relative max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-[1.5rem] border border-white/10 bg-[#08111d] shadow-2xl shadow-black/50 sm:max-h-[90vh] sm:rounded-[2rem]"
+              className="custom-scrollbar relative max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-[1.5rem] border border-white/10 bg-[#0c0a1a] shadow-2xl shadow-black/50 sm:max-h-[90vh] sm:rounded-[2rem]"
             >
               <button
                 onClick={() => setSelectedProject(null)}
@@ -319,18 +315,15 @@ const ProjectShowcase = () => {
                 <X size={20} />
               </button>
 
-              <div className="relative h-56 overflow-hidden sm:h-80 lg:h-96">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08111d] via-[#08111d]/25 to-transparent" />
-              </div>
+              <ProjectImage
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                variant="modal"
+              />
 
-              <div className="relative -mt-12 p-4 sm:-mt-20 sm:p-8 lg:p-10">
+              <div className="relative p-4 sm:p-8 lg:p-10">
                 <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-5 backdrop-blur sm:rounded-[2rem] sm:p-6">
-                  <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">
+                  <p className="text-sm uppercase tracking-[0.3em] text-violet-300/80">
                     {selectedProject.category}
                   </p>
                   <h3 className="mt-3 text-2xl font-semibold text-white sm:text-3xl lg:text-4xl">
@@ -359,7 +352,7 @@ const ProjectShowcase = () => {
                     {selectedProject.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5 text-sm font-medium text-cyan-100"
+                        className="rounded-full border border-violet-400/20 bg-violet-400/10 px-3 py-1.5 text-sm font-medium text-violet-100"
                       >
                         {tech}
                       </span>
@@ -372,7 +365,7 @@ const ProjectShowcase = () => {
                         href={selectedProject.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-violet-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-violet-300"
                       >
                         <ExternalLink size={18} />
                         Visit Live Demo
@@ -393,7 +386,7 @@ const ProjectShowcase = () => {
                         href={selectedProject.sourceCode}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 font-semibold text-white transition hover:border-cyan-300/40"
+                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 font-semibold text-white transition hover:border-violet-300/40"
                       >
                         <Github size={18} />
                         View Source Code
