@@ -1,4 +1,4 @@
-import about from "../assets/profile2.png";
+import about from "../assets/profile.png";
 import PropTypes from "prop-types";
 import { useLayoutEffect, useRef, useState } from "react";
 import {
@@ -286,7 +286,7 @@ const About = () => {
                 alt="Kaung Phyo Thant"
                 width={320}
                 height={320}
-                className="aspect-square w-full rounded-[1.5rem] object-contain"
+                className="aspect-square w-full rounded-[1.5rem] object-cover"
               />
               <div className="absolute inset-x-4 bottom-4 flex flex-wrap gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/50 px-3 py-1.5 text-xs text-white backdrop-blur-md">
