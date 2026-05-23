@@ -193,7 +193,6 @@ export const PROJECTS = [
       "Gold and jewelry POS admin with RBAC, gold currency handling, and quality measurement—supports any weight unit worldwide.",
     technologies: ["Laravel API", "NextJS", "TailwindCss", "ShadCN", "Zustand", "React Query"],
     highlights: ["Role based access control", "Gold currency & quality", "Global measurement units"],
-    liveDemo: "https://default-gold-shop-admin.hapeyeapp.com/",
   },
 ];
 
