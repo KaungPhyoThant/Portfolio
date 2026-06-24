@@ -1,6 +1,6 @@
 import { FaLaravel, FaPhp } from "react-icons/fa";
 import { RiNextjsFill, RiReactjsLine } from "react-icons/ri";
-import { SiExpress, SiMysql } from "react-icons/si";
+import { SiNestjs, SiPostgresql } from "react-icons/si";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import { fadeUp, staggerContainer, viewportOnce } from "../utils/motion";
@@ -10,8 +10,8 @@ const technologies = [
   { icon: RiNextjsFill, label: "Next.js", color: "border-slate-300/40 bg-white/5 text-white", delay: 3 },
   { icon: FaPhp, label: "PHP", color: "border-indigo-400/50 bg-indigo-400/10 text-indigo-300", delay: 3.5 },
   { icon: FaLaravel, label: "Laravel", color: "border-red-400/50 bg-red-400/10 text-red-300", delay: 2.8 },
-  { icon: SiExpress, label: "Express", color: "border-fuchsia-400/40 bg-fuchsia-400/10 text-fuchsia-200", delay: 3.2 },
-  { icon: SiMysql, label: "MySQL", color: "border-sky-400/50 bg-sky-400/10 text-sky-300", delay: 3.8 },
+  { icon: SiNestjs, label: "Nest JS", color: "border-fuchsia-400/40 bg-fuchsia-400/10 text-fuchsia-200", delay: 3.2 },
+  { icon: SiPostgresql, label: "PostgreSQL", color: "border-sky-400/50 bg-sky-400/10 text-sky-300", delay: 3.8 },
 ];
 
 const iconVariants = (duration) => ({
