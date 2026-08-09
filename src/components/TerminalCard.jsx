@@ -405,9 +405,9 @@ const TerminalCard = () => {
         </div>
 
         {/* Input prompt line */}
-        <div className="flex items-center gap-x-2 pt-2 border-t border-white/[0.04] bg-transparent mt-2 select-none">
-          <span className="text-emerald-400">➜</span>
-          <span className="text-violet-400">~</span>
+        <div className="flex items-center gap-x-2 pt-2 border-t border-white/[0.04] bg-transparent mt-2 select-none text-base sm:text-sm font-mono leading-none">
+          <span className="text-emerald-400 leading-none">➜</span>
+          <span className="text-violet-400 leading-none">~</span>
           <input
             ref={inputRef}
             type="text"
@@ -420,7 +420,7 @@ const TerminalCard = () => {
             autoComplete="off"
             autoCorrect="off"
             spellCheck={false}
-            className="bg-transparent border-none outline-none text-slate-200 font-mono text-base sm:text-sm flex-1 caret-violet-400 focus:ring-0 focus:border-none py-1 px-0"
+            className="bg-transparent border-none outline-none text-slate-200 font-mono text-base sm:text-sm flex-1 caret-violet-400 focus:ring-0 focus:border-none p-0 m-0 leading-none h-auto"
             placeholder="Type a command (try 'help')..."
             autoFocus
           />
