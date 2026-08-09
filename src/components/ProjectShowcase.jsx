@@ -105,7 +105,7 @@ const ProjectShowcase = () => {
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             placeholder="Search tech or details..."
-            className="w-full rounded-full border border-white/10 bg-slate-950/60 py-2.5 pl-10 pr-4 text-xs sm:text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-500/40 focus:ring-1 focus:ring-violet-500/20"
+            className="w-full rounded-full border border-white/10 bg-slate-950/60 py-2.5 pl-10 pr-4 text-base sm:text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-500/40 focus:ring-1 focus:ring-violet-500/20"
           />
         </div>
       </motion.div>

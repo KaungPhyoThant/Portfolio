@@ -420,7 +420,7 @@ const TerminalCard = () => {
             autoComplete="off"
             autoCorrect="off"
             spellCheck={false}
-            className="bg-transparent border-none outline-none text-slate-200 font-mono text-xs sm:text-sm flex-1 caret-violet-400 focus:ring-0 focus:border-none py-1 px-0"
+            className="bg-transparent border-none outline-none text-slate-200 font-mono text-base sm:text-sm flex-1 caret-violet-400 focus:ring-0 focus:border-none py-1 px-0"
             placeholder="Type a command (try 'help')..."
             autoFocus
           />
