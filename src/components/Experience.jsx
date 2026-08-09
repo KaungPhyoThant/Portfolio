@@ -52,7 +52,7 @@ const Experience = () => {
                 </div>
                 
                 {/* Year Pill */}
-                <span className="rounded-full border border-white/[0.06] bg-white/[0.02] px-3.5 py-1 text-xs font-semibold text-slate-400 select-none self-start sm:self-center">
+                <span className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3.5 py-1 text-xs font-semibold text-slate-400 select-none self-start sm:self-center">
                   {experience.year}
                 </span>
               </div>
@@ -67,7 +67,7 @@ const Experience = () => {
                 {experience.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-violet-400/20 bg-violet-400/10 px-2.5 py-1 text-[10px] font-semibold text-violet-200 tracking-wide"
+                    className="rounded-lg border border-violet-400/20 bg-violet-400/10 px-2.5 py-1 text-[10px] font-semibold text-violet-200 tracking-wide"
                   >
                     {tech}
                   </span>

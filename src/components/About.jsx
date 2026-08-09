@@ -289,11 +289,11 @@ const About = () => {
                 className="aspect-square w-full rounded-[1.5rem] object-cover"
               />
               <div className="absolute inset-x-4 bottom-4 flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/50 px-3 py-1.5 text-xs text-white backdrop-blur-md">
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-black/50 px-3 py-1.5 text-xs text-white backdrop-blur-md">
                   <MapPin size={12} className="text-violet-300" />
                   {PROFILE.location}
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1.5 text-xs text-emerald-200 backdrop-blur-md">
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-400/20 bg-emerald-500/10 px-3 py-1.5 text-xs text-emerald-200 backdrop-blur-md">
                   <Sparkles size={12} />
                   {PROFILE.status}
                 </span>

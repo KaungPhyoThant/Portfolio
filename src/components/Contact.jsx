@@ -91,7 +91,7 @@ const Contact = () => {
               href={`mailto:${CONTACT.email}?subject=Project%20Inquiry`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-violet-400 hover:bg-violet-300 px-6 py-3 font-semibold text-slate-950 text-sm mt-8 transition-all duration-200 active:scale-95 shadow-[0_4px_25px_rgba(167,139,250,0.2)]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-violet-400 hover:bg-violet-300 px-6 py-3 font-semibold text-slate-950 text-sm mt-8 transition-all duration-200 active:scale-95 shadow-[0_4px_25px_rgba(167,139,250,0.2)]"
             >
               <span>Start a conversation</span>
               <ArrowUpRight size={16} />

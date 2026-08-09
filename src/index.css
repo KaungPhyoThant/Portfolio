@@ -53,11 +53,11 @@ h6 {
 }
 
 @utility btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-violet-500 px-6 py-3 font-semibold text-white transition hover:bg-violet-400 hover:shadow-lg hover:shadow-violet-500/25;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-violet-500 px-6 py-3 font-semibold text-white transition hover:bg-violet-400 hover:shadow-lg hover:shadow-violet-500/25;
 }
 
 @utility btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-medium text-white transition hover:border-violet-300/40 hover:bg-white/10;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-medium text-white transition hover:border-violet-300/40 hover:bg-white/10;
 }
 
 @keyframes float {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Download, Sparkles } from "lucide-react";
+import { ArrowUpRight, Award, CheckCircle2, Clock, Github, Sparkles } from "lucide-react";
 import Typewriter from "./Typewriter";
 import TerminalCard from "./TerminalCard";
 import {
@@ -14,6 +14,8 @@ import {
   staggerContainer,
 } from "../utils/motion";
 
+const statIcons = [Clock, Award, CheckCircle2];
+
 const Hero = () => {
   return (
     <div className="border-b border-white/10 pb-14 sm:pb-16 lg:mb-24">
@@ -27,10 +29,10 @@ const Hero = () => {
           <div className="flex flex-col items-center lg:items-start">
             <motion.div
               variants={fadeUp()}
-              className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-2 text-center text-xs text-violet-100 shadow-lg shadow-violet-950/30 sm:px-4 sm:text-sm"
+              className="mb-5 inline-flex max-w-full items-center gap-2 rounded-xl border border-violet-400/25 bg-violet-500/10 px-3.5 py-1.5 text-center text-xs font-medium text-violet-200 backdrop-blur-md sm:px-4 sm:text-sm"
             >
-              <Sparkles size={16} className="text-violet-300" />
-              Open to full-stack work
+              <Sparkles size={15} className="text-violet-400" />
+              <span>Open to full-stack work</span>
             </motion.div>
 
             <motion.h1
@@ -62,21 +64,31 @@ const Hero = () => {
 
             <motion.div
               variants={fadeUp(0.25)}
-              className="grid w-full max-w-2xl gap-3 pb-5 sm:grid-cols-3"
+              className="grid w-full max-w-2xl gap-3.5 pb-6 sm:grid-cols-3"
             >
-              {HERO_STATS.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  variants={fadeUp(0.3 + index * 0.05)}
-                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                  className="glass-panel glow-ring px-4 py-4 text-center sm:px-5 sm:text-left"
-                >
-                  <p className="text-xl font-semibold text-white sm:text-2xl">
-                    {item.value}
-                  </p>
-                  <p className="mt-1 text-sm text-slate-300">{item.label}</p>
-                </motion.div>
-              ))}
+              {HERO_STATS.map((item, index) => {
+                const IconComponent = statIcons[index] || Award;
+                return (
+                  <motion.div
+                    key={item.label}
+                    variants={fadeUp(0.3 + index * 0.05)}
+                    whileHover={{ y: -3 }}
+                    className="flex flex-col justify-between rounded-xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-md transition-all duration-200 hover:border-violet-500/30 hover:bg-white/[0.06]"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-violet-500/20 bg-violet-500/10 text-violet-400">
+                        <IconComponent size={18} />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                        {item.value}
+                      </p>
+                      <p className="mt-1 text-xs font-medium text-slate-400">{item.label}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
 
             <motion.div
@@ -85,23 +97,23 @@ const Hero = () => {
             >
               <motion.a
                 href="#projects"
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="btn-primary w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-violet-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-violet-500 shadow-md shadow-violet-950/40 w-full sm:w-auto"
               >
-                Explore projects
+                <span>Explore projects</span>
                 <ArrowUpRight size={18} />
               </motion.a>
               <motion.a
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noreferrer"
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="btn-secondary w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:border-white/25 hover:bg-white/10 w-full sm:w-auto"
               >
-                View GitHub
-                <Download size={18} />
+                <Github size={17} />
+                <span>View GitHub</span>
               </motion.a>
             </motion.div>
           </div>

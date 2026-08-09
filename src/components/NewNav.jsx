@@ -71,7 +71,7 @@ export default function NewNav() {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`relative rounded-full px-3.5 py-1.5 text-xs sm:text-sm capitalize font-medium transition-colors ${
+                  className={`relative rounded-xl px-3.5 py-1.5 text-xs sm:text-sm capitalize font-medium transition-colors ${
                     activeSection === section
                       ? "text-white"
                       : "text-slate-400 hover:text-slate-200"
@@ -80,7 +80,7 @@ export default function NewNav() {
                   {activeSection === section && (
                     <motion.span
                       layoutId="activeHeaderPill"
-                      className="absolute inset-0 rounded-full bg-white/[0.06] border border-white/[0.08]"
+                      className="absolute inset-0 rounded-xl bg-white/[0.06] border border-white/[0.08]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}

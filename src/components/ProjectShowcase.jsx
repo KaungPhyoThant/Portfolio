@@ -83,9 +83,9 @@ const ProjectShowcase = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`rounded-full px-4.5 py-2 text-xs sm:text-sm font-semibold transition-all duration-200 ${
+              className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-200 ${
                 activeCategory === category
-                  ? "bg-violet-400 text-slate-950 shadow-[0_4px_20px_rgba(139,92,246,0.22)]"
+                  ? "bg-violet-400 text-slate-950 font-semibold shadow-[0_4px_20px_rgba(139,92,246,0.22)]"
                   : "border border-white/10 bg-white/5 text-slate-300 hover:border-white/20 hover:text-white"
               }`}
             >
@@ -105,7 +105,7 @@ const ProjectShowcase = () => {
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             placeholder="Search tech or details..."
-            className="w-full rounded-full border border-white/10 bg-slate-950/60 py-2.5 pl-10 pr-4 text-base sm:text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-500/40 focus:ring-1 focus:ring-violet-500/20"
+            className="w-full rounded-xl border border-white/10 bg-slate-950/60 py-2.5 pl-10 pr-4 text-base sm:text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-violet-500/40 focus:ring-1 focus:ring-violet-500/20"
           />
         </div>
       </motion.div>
@@ -120,18 +120,18 @@ const ProjectShowcase = () => {
             viewport={viewportOnce}
             transition={{ duration: 0.45, delay: index * 0.05 }}
             onClick={() => setSelectedProject(project)}
-            className="group flex flex-col justify-between overflow-hidden rounded-[22px] border border-white/[0.06] bg-[#0c0a1a]/40 backdrop-blur-md cursor-pointer transition-all duration-300 hover:border-violet-500/30 hover:shadow-[0_20px_50px_rgba(139,92,246,0.06)] hover:-translate-y-1.5"
+            className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#0a0817]/70 backdrop-blur-md cursor-pointer transition-all duration-200 hover:border-violet-500/40 hover:bg-[#0e0b20]/80 hover:-translate-y-1"
           >
             {/* Card Image Wrapper */}
-            <div className="relative aspect-[16/10] overflow-hidden bg-[#0d0b1d] border-b border-white/[0.04]">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#0a0818] border-b border-white/10">
               <img
                 src={project.image}
                 alt={project.title}
                 loading="lazy"
-                className="h-full w-full object-contain scale-[0.88] group-hover:scale-[0.96] transition-transform duration-500 ease-out"
+                className="h-full w-full object-contain scale-[0.88] group-hover:scale-[0.94] transition-transform duration-300 ease-out"
               />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-950/80 to-transparent" />
-              <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[10px] font-semibold text-slate-200 backdrop-blur-sm select-none uppercase tracking-wider">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-[#0a0817] to-transparent" />
+              <span className="absolute left-3.5 top-3.5 rounded-lg border border-white/15 bg-black/60 px-3 py-1 text-[10px] font-medium text-slate-200 backdrop-blur-md select-none uppercase tracking-wider">
                 {project.status}
               </span>
             </div>
@@ -139,18 +139,18 @@ const ProjectShowcase = () => {
             {/* Card Content Body */}
             <div className="p-5 flex-1 flex flex-col justify-between">
               <div className="space-y-3">
-                <span className="text-[10px] font-bold tracking-[0.2em] text-violet-400 uppercase select-none">
-                  {project.category}
-                </span>
-                
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-lg font-bold text-white group-hover:text-violet-200 transition-colors duration-200">
-                    {project.title}
-                  </h3>
-                  <div className="text-slate-400 group-hover:text-violet-300 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                    <ArrowUpRight size={18} />
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold tracking-[0.18em] text-violet-400 uppercase select-none">
+                    {project.category}
+                  </span>
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-400 group-hover:border-violet-500/30 group-hover:bg-violet-500/15 group-hover:text-violet-300 transition-all duration-200">
+                    <ArrowUpRight size={15} />
                   </div>
                 </div>
+
+                <h3 className="text-lg font-bold text-white group-hover:text-violet-200 transition-colors duration-200">
+                  {project.title}
+                </h3>
 
                 <p className="line-clamp-3 text-xs sm:text-sm leading-relaxed text-slate-400">
                   {project.description}
@@ -162,13 +162,13 @@ const ProjectShowcase = () => {
                 {project.technologies.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-white/[0.05] bg-white/[0.02] px-2.5 py-1 text-[9px] font-semibold text-slate-300 tracking-wide"
+                    className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[10px] font-medium text-slate-300 tracking-wide"
                   >
                     {tech}
                   </span>
                 ))}
                 {project.technologies.length > 3 && (
-                  <span className="rounded-full border border-white/[0.05] bg-white/[0.02] px-2 py-1 text-[9px] font-semibold text-violet-400 tracking-wide">
+                  <span className="rounded-lg border border-violet-500/30 bg-violet-500/10 px-2 py-1 text-[10px] font-semibold text-violet-300 tracking-wide">
                     +{project.technologies.length - 3} more
                   </span>
                 )}
@@ -187,7 +187,7 @@ const ProjectShowcase = () => {
         </div>
       )}
 
-      {/* Premium Drawer Modal Overlay */}
+      {/* Project Detail Modal Backdrop */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -195,19 +195,22 @@ const ProjectShowcase = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedProject(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-black/80 backdrop-blur-xl"
           >
+            {/* Modal Dialog Card */}
             <motion.div
-              initial={{ scale: 0.96, opacity: 0, y: 15 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.96, opacity: 0, y: 15 }}
-              onClick={(event) => event.stopPropagation()}
-              className="relative w-full max-w-2xl overflow-hidden rounded-[26px] border border-white/10 bg-[#070511] shadow-2xl"
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", duration: 0.5, bounce: 0.1 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a0817] shadow-2xl shadow-violet-950/40"
             >
               {/* Close Button */}
               <button
+                type="button"
                 onClick={() => setSelectedProject(null)}
-                className="absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-black/40 p-2 text-white hover:bg-black/60 transition active:scale-95"
+                className="absolute right-4 top-4 z-10 rounded-xl border border-white/10 bg-black/40 p-2 text-white hover:bg-black/60 transition active:scale-95"
                 aria-label="Close project details"
               >
                 <X size={18} />
@@ -276,7 +279,7 @@ const ProjectShowcase = () => {
                       {selectedProject.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-full border border-violet-400/20 bg-violet-400/10 px-3 py-1 text-xs font-semibold text-violet-200"
+                          className="rounded-lg border border-violet-400/20 bg-violet-400/10 px-3 py-1 text-xs font-semibold text-violet-200"
                         >
                           {tech}
                         </span>
@@ -291,7 +294,7 @@ const ProjectShowcase = () => {
                         href={selectedProject.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-violet-400 hover:bg-violet-300 px-5 py-3 font-semibold text-slate-950 text-sm transition active:scale-95 shadow-[0_4px_20px_rgba(167,139,250,0.15)]"
+                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-violet-400 hover:bg-violet-300 px-5 py-3 font-semibold text-slate-950 text-sm transition active:scale-95 shadow-[0_4px_20px_rgba(167,139,250,0.15)]"
                       >
                         <ExternalLink size={16} />
                         Visit Live Site
@@ -300,7 +303,7 @@ const ProjectShowcase = () => {
                       <button
                         type="button"
                         disabled
-                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-white/5 bg-white/[0.02] px-5 py-3 font-semibold text-slate-500 text-sm select-none"
+                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-white/5 bg-white/[0.02] px-5 py-3 font-semibold text-slate-500 text-sm select-none"
                       >
                         <ExternalLink size={16} />
                         Demo Offline
@@ -312,7 +315,7 @@ const ProjectShowcase = () => {
                         href={selectedProject.sourceCode}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 hover:border-violet-500/30 px-5 py-3 font-semibold text-white text-sm transition active:scale-95"
+                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 hover:border-violet-500/30 px-5 py-3 font-semibold text-white text-sm transition active:scale-95"
                       >
                         <Github size={16} />
                         View Source Code
@@ -321,7 +324,7 @@ const ProjectShowcase = () => {
                       <button
                         type="button"
                         disabled
-                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-white/5 bg-white/[0.02] px-5 py-3 font-semibold text-slate-500 text-sm select-none"
+                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-white/5 bg-white/[0.02] px-5 py-3 font-semibold text-slate-500 text-sm select-none"
                       >
                         <Github size={16} />
                         Private Repository
