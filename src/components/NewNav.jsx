@@ -131,7 +131,7 @@ export default function NewNav() {
               initial={{ opacity: 0, y: -10, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
-              transition={{ duration: 0.18 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="sm:hidden mt-2 rounded-2xl border border-white/[0.08] bg-[#070512]/55 backdrop-blur-2xl p-4 space-y-1 shadow-2xl"
             >
               {sections.map((section) => (

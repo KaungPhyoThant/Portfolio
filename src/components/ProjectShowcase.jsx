@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { PROJECTS } from "../constants";
 import SectionHeading from "./SectionHeading";
-import { viewportOnce } from "../utils/motion";
+import { easeOut, viewportOnce } from "../utils/motion";
 
 const categories = ["All", ...new Set(PROJECTS.map((project) => project.category))];
 
@@ -74,7 +74,7 @@ const ProjectShowcase = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 20 }}
         viewport={viewportOnce}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6, ease: easeOut }}
         className="mt-10 p-5 rounded-[24px] border border-white/[0.06] bg-white/[0.01] backdrop-blur-md flex flex-col gap-5 md:flex-row md:items-center md:justify-between sm:mt-14"
       >
         {/* Horizontal Category Tab Pills */}
@@ -118,7 +118,7 @@ const ProjectShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 30 }}
             viewport={viewportOnce}
-            transition={{ duration: 0.45, delay: index * 0.05 }}
+            transition={{ duration: 0.6, ease: easeOut, delay: index * 0.08 }}
             onClick={() => setSelectedProject(project)}
             className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#0a0817]/70 backdrop-blur-md cursor-pointer transition-all duration-200 hover:border-violet-500/40 hover:bg-[#0e0b20]/80 hover:-translate-y-1"
           >
@@ -194,6 +194,7 @@ const ProjectShowcase = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: easeOut }}
             onClick={() => setSelectedProject(null)}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-black/80 backdrop-blur-xl"
           >
@@ -201,8 +202,8 @@ const ProjectShowcase = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: "spring", duration: 0.5, bounce: 0.1 }}
+              exit={{ opacity: 0, scale: 0.96, y: 16 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30, mass: 0.8 }}
               onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a0817] shadow-2xl shadow-violet-950/40"
             >

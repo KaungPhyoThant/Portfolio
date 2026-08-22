@@ -6,6 +6,7 @@ import project8 from "../assets/projects/project-8.png";
 import project9 from "../assets/projects/project-9.png";
 import project10 from "../assets/projects/project-10.png";
 import project11 from "../assets/projects/project-11.png";
+import project12 from "../assets/projects/project-12.png";
 
 export const TYPEWRITER_PHRASES = [
   "Full Stack Developer",
@@ -193,6 +194,17 @@ export const PROJECTS = [
       "Gold and jewelry POS admin with RBAC, gold currency handling, and quality measurement—supports any weight unit worldwide.",
     technologies: ["Laravel API", "NextJS", "TailwindCss", "ShadCN", "Zustand", "React Query"],
     highlights: ["Role based access control", "Gold currency & quality", "Global measurement units"],
+  },
+  {
+    title: "Expenso",
+    image: project12,
+    category: "Finance",
+    status: "Live now",
+    description:
+      "Expense tracker app that logs spending, sets budgets, and breaks down costs by category with clear visual insights.",
+    technologies: ["React", "TypeScript", "TailwindCss", "Recharts"],
+    highlights: ["Budget tracking", "AI Powered Receipt Scanner", "Spending insights"],
+    liveDemo: "https://expenso-patronum.vercel.app"
   },
 ];
 
